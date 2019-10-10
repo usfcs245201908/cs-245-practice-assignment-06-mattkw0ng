@@ -3,7 +3,7 @@ public class ArrayQueue<T> implements Queue<T>{
 	public int first = 0;
 	public int last =  -1;
 
-	public T dequeue() throws Exception{
+	public T dequeue(){
 		/*
 		if(empty()){
 			throw new Exception();
@@ -19,7 +19,7 @@ public class ArrayQueue<T> implements Queue<T>{
 		T item = a[first];
 		first = (first+1)%a.length;
 		//System.out.println("(after)first: " + first+" last: "+last);
-		System.out.println("dequeued: "+item);
+		//System.out.println("dequeued: "+item);
 		return item;
 
 

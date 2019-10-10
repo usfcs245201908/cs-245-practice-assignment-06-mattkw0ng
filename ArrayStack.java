@@ -24,7 +24,7 @@ public class ArrayStack<T> implements Stack<T>{
 		}
 		*/
 		int temp = top;
-		System.out.println("poppedd: "+a[temp]);
+		//System.out.println("poppedd: "+a[temp]);
 		top--;
 		return a[temp];
 
