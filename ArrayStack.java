@@ -3,47 +3,27 @@ public class ArrayStack<T> implements Stack<T>{
 	public int top = -1;
 
 	public void push(T item){
-		if(top+1 == a.length){
+		if(top+1 == a.length){ //if there is no more space in the array, calls grow_array
 			grow_array();
 		}else{
-			a[++top] = item;
+			a[++top] = item;	//increments top and then sets it to the item
 		}
-		//System.out.println("top: "+top);
 	}
 
-	public T pop() 
+	public T pop() //throws Exception
 	{
-		/*
-		if(empty()){
-			//throw new Exception("");
-		}else{
-			int temp = top;
-			System.out.println("poppedd: "+a[temp]);
-			top--;
-			return a[temp];
-		}
-		*/
-		int temp = top;
-		//System.out.println("poppedd: "+a[temp]);
-		top--;
-		return a[temp];
+		//if (empty()){throw new Exception();} else{follow code below}
+		return a[top--]; //returns a[top] and decrements top
 
 	}
 
-	public T peek() 
+	public T peek() //throws Exception
 	{
-		/*
-		if(empty()){
-			//throw new Exception("");
-		}else{
-			return a[top];
-		}
-		*/
+		//if (empty()){throw new Exception();} else{follow code below}
 		return a[top];
 	}
 
 	public boolean empty(){
-		//System.out.println(top);
 		if (top == -1){
 			return true;
 		}else{
@@ -52,7 +32,6 @@ public class ArrayStack<T> implements Stack<T>{
 	}
 
 	private void grow_array(){
-		//System.out.println("grew");
 		int len = a.length;
 		T[] new_a = (T[]) new Object[len*2];
 		for(int i = 0 ; i<len ; i++){
